@@ -19,7 +19,7 @@ const JobFormModal = ({ close, refresh, job }) => {
     const [preview, setPreview] = useState(null);
     const [error, setError] = useState("");
 
-    // ✅ Load edit data
+
     useEffect(() => {
         if (job) {
             setForm({
@@ -39,7 +39,7 @@ const JobFormModal = ({ close, refresh, job }) => {
         }
     }, [job]);
 
-    // ✅ Multi select
+
     const toggleSelect = (field, value) => {
         setForm((prev) => ({
             ...prev,
@@ -50,7 +50,7 @@ const JobFormModal = ({ close, refresh, job }) => {
         setError("");
     };
 
-    // ✅ Image preview
+
     const handleImageChange = (e) => {
         const file = e.target.files[0];
         if (file) {
@@ -59,10 +59,10 @@ const JobFormModal = ({ close, refresh, job }) => {
         }
     };
 
-    // ✅ Submit
+
     const handleSubmit = async () => {
 
-        // Validation
+
         if (!form.title || !form.status.length || !form.category.length) {
             setError("Please fill all required fields");
             return;
@@ -117,7 +117,7 @@ const JobFormModal = ({ close, refresh, job }) => {
 
                 <h2>{job ? "Edit Job" : "Create Job"}</h2>
 
-                {/* Title */}
+
                 <input
                     type="text"
                     placeholder="Job Title *"
@@ -128,7 +128,7 @@ const JobFormModal = ({ close, refresh, job }) => {
                     }}
                 />
 
-                {/* Status */}
+
                 <h4>Status *</h4>
                 <div className="modal-multi">
                     {["Draft", "Requested", "Posted", "Filled"].map((s) => (
@@ -143,7 +143,7 @@ const JobFormModal = ({ close, refresh, job }) => {
                     ))}
                 </div>
 
-                {/* Category */}
+
                 <h4>Category *</h4>
                 <div className="modal-multi">
                     {["Full-time", "Part-time", "Intern"].map((c) => (
@@ -158,7 +158,7 @@ const JobFormModal = ({ close, refresh, job }) => {
                     ))}
                 </div>
 
-                {/* Address */}
+
                 <input
                     type="text"
                     placeholder="Address"
@@ -166,7 +166,7 @@ const JobFormModal = ({ close, refresh, job }) => {
                     onChange={(e) => setForm({ ...form, address: e.target.value })}
                 />
 
-                {/* City */}
+
                 <input
                     type="text"
                     placeholder="City"
@@ -174,7 +174,7 @@ const JobFormModal = ({ close, refresh, job }) => {
                     onChange={(e) => setForm({ ...form, city: e.target.value })}
                 />
 
-                {/* State */}
+
                 <input
                     type="text"
                     placeholder="State"
@@ -182,7 +182,7 @@ const JobFormModal = ({ close, refresh, job }) => {
                     onChange={(e) => setForm({ ...form, state: e.target.value })}
                 />
 
-                {/* Dates */}
+
                 <div className="modal-dates">
                     <input
                         type="date"
@@ -196,23 +196,23 @@ const JobFormModal = ({ close, refresh, job }) => {
                     />
                 </div>
 
-                {/* Description */}
+
                 <textarea
                     placeholder="Description"
                     value={form.description}
                     onChange={(e) => setForm({ ...form, description: e.target.value })}
                 />
 
-                {/* Image */}
+
                 <input type="file" onChange={handleImageChange} />
                 {preview && (
                     <img src={preview} alt="Preview" className="preview-image" />
                 )}
 
-                {/* Error Message */}
+
                 {error && <p className="error-text">{error}</p>}
 
-                {/* Buttons */}
+
                 <div className="modal-buttons">
                     <button className="submit-btn" onClick={handleSubmit}>
                         {job ? "Update" : "Submit"}

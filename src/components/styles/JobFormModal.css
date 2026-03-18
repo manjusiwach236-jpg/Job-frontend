@@ -1,4 +1,3 @@
-/* Modal overlay - semi-transparent background */
 .modal-overlay {
     position: fixed;
     top: 0;
@@ -6,17 +5,17 @@
     width: 100%;
     height: 100%;
     background: rgba(0, 0, 0, 0.4);
-    /* darker overlay for focus */
+
     display: flex;
     justify-content: center;
     align-items: center;
     z-index: 100;
 }
 
-/* Modal box - main container */
+
 .modal-box {
     background: linear-gradient(135deg, #f0f4ff, #e0f7fa);
-    /* soft gradient */
+
     width: 440px;
     border-radius: 20px;
     padding: 25px 20px;
@@ -32,24 +31,24 @@
     transform: scale(1.01);
 }
 
-/* Modal title */
+
 .modal-title {
     text-align: center;
     font-size: 26px;
     margin-bottom: 25px;
     font-weight: bold;
     color: #1565c0;
-    /* dark blue title */
+
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
 }
 
-/* Input fields and textareas */
+
 .modal-input,
 .modal-textarea {
     width: 100%;
     padding: 12px;
     margin-bottom: 18px;
-    /* spacing between inputs */
+
     border-radius: 12px;
     border: 1px solid #b0bec5;
     font-size: 15px;
@@ -60,7 +59,7 @@
 .modal-input:focus,
 .modal-textarea:focus {
     border-color: #1565c0;
-    /* blue border on focus */
+
     box-shadow: 0 0 8px rgba(21, 101, 192, 0.3);
     outline: none;
     gap: 3px;
@@ -72,7 +71,7 @@
     resize: none;
 }
 
-/* Multi select (status/category) */
+
 .modal-multi {
     display: flex;
     flex-wrap: wrap;
@@ -92,31 +91,31 @@
 
 .multi-btn:hover {
     background-color: #bbdefb;
-    /* hover light blue */
+
     border-color: #64b5f6;
 }
 
-/* Selected button (blue for status/category) */
+
 .multi-btn.selected {
     background-color: #1565c0;
-    /* dark blue */
+
     color: #fff;
     border-color: #0d47a1;
 }
 
-/* Dates input */
+
 .modal-dates {
     display: flex;
     gap: 12px;
     margin-bottom: 18px;
 }
 
-/* File input */
+
 .modal-file {
     margin-bottom: 18px;
 }
 
-/* Buttons at the bottom */
+
 .modal-buttons {
     display: flex;
     justify-content: flex-end;
@@ -138,10 +137,10 @@
     transform: scale(1.05);
 }
 
-/* Submit button */
+
 .modal-buttons .submit {
     background-color: #1565c0;
-    /* blue */
+
     color: #fff;
 }
 
@@ -149,7 +148,7 @@
     background-color: #0d47a1;
 }
 
-/* Cancel button */
+
 .modal-buttons .cancel {
     background-color: #b0bec5;
     color: #fff;
@@ -159,7 +158,7 @@
     background-color: #90a4ae;
 }
 
-/* Optional image preview */
+
 .preview-image {
     margin-bottom: 18px;
     border-radius: 12px;

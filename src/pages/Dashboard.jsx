@@ -10,7 +10,7 @@ const Dashboard = () => {
     const [editingJob, setEditingJob] = useState(null);
     const [showAnalytics, setShowAnalytics] = useState(false);
 
-    // Fetch jobs from backend
+
     const fetchJobs = async () => {
         try {
             const res = await fetch("http://127.0.0.1:8000/api/jobs/");
@@ -25,19 +25,19 @@ const Dashboard = () => {
         fetchJobs();
     }, []);
 
-    // Open create job modal
+
     const handleCreate = () => {
         setEditingJob(null);
         setShowForm(true);
     };
 
-    // Open edit job modal
+
     const handleEdit = (job) => {
         setEditingJob(job);
         setShowForm(true);
     };
 
-    // Close modal safely
+
     const handleCloseForm = () => {
         setShowForm(false);
         setEditingJob(null);
@@ -71,7 +71,7 @@ const Dashboard = () => {
                 )}
             </div>
 
-            {/* Job Form Modal */}
+
             {showForm && (
                 <JobFormModal
                     close={handleCloseForm}
@@ -80,7 +80,7 @@ const Dashboard = () => {
                 />
             )}
 
-            {/* Analytics Modal */}
+
             {showAnalytics && (
                 <AnalyticsModal
                     jobs={jobs}

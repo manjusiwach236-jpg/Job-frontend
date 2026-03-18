@@ -8,7 +8,7 @@ const AnalyticsModal = ({ jobs, close }) => {
 
     jobs.forEach(job => {
 
-        // ✅ FIX: convert string → array
+
         const statusArray = typeof job.status === "string"
             ? job.status.split(",")
             : job.status || [];
@@ -28,7 +28,7 @@ const AnalyticsModal = ({ jobs, close }) => {
 
     const createGradient = (countObj) => {
         const total = Object.values(countObj).reduce((a, b) => a + b, 0);
-        if (total === 0) return "#eee"; // ✅ avoid empty crash
+        if (total === 0) return "#eee";
 
         let gradient = "", start = 0;
 
